@@ -11,12 +11,24 @@ class BaseModel:
     """BaseModel class
     """
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """Constructor of the BaseModel class
+            Args:
+                *args: pointer to an argument list
+                **kwargs: double pointer to a dictionary: key/value
         """
-        self.id = str(uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+        if not kwargs:
+            self.id = str(uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
+        else:
+            for key, value in kwargs.items():
+                if "__" not in key:
+                    if key == "created_at" or key == "updated_at":
+                        date = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
+                        setattr(self, key, date)
+                    else:
+                        setattr(self, key, date)
 
     def __str__(self):
         """Returns [<clase name>] (<self.id>) <self.__dict__>
