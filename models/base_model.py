@@ -51,3 +51,4 @@ class BaseModel:
         dict_new.update({"__class__": self.__class__.__name__})
         dict_new.update({"created_at": datetime.isoformat(self.created_at)})
         dict_new.update({"updated_at": datetime.isoformat(self.updated_at)})
+        return dict_new
