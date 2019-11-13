@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module to create a unique FileStorage instance for your application
+"""Module to create an unique FileStorage instance for your application
 """
 
 
