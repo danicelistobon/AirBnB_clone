@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""Module that serialized and deserializes
+"""Module that serializes and deserializes
 """
 
 
-from model.base_model import BaseModel
+from models.base_model import BaseModel
 import json
 
 

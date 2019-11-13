@@ -5,6 +5,7 @@
 
 from uuid import uuid4
 from datetime import datetime
+import models
 
 
 class BaseModel:
@@ -14,13 +15,14 @@ class BaseModel:
     def __init__(self, *args, **kwargs):
         """Constructor of the BaseModel class
             Args:
-                *args: pointer to an argument list
+                *args: pointer to a argument list
                 **kwargs: double pointer to a dictionary: key/value
         """
         if not kwargs:
             self.id = str(uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            models.storage.new(self)
         else:
             for key, value in kwargs.items():
                 if "__" not in key:
@@ -28,10 +30,10 @@ class BaseModel:
                         date = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
                         setattr(self, key, date)
                     else:
-                        setattr(self, key, date)
+                        setattr(self, key, value)
 
     def __str__(self):
-        """Returns [<clase name>] (<self.id>) <self.__dict__>
+        """Returns [<class name>] (<self.id>) <self.__dict__>
         """
         return ("[{}] ({}) {}".format(self.__class__.__name__,
                                       self.id, self.__dict__))
@@ -39,6 +41,7 @@ class BaseModel:
     def save(self):
         """Updates updated_at with the current datetime
         """
+        models.storage.save()
         self.updated_at = datetime.now()
 
     def to_dict(self):
