@@ -26,6 +26,45 @@ Do you remember the Shell? Its exactly the same but limited to a specific use-ca
 - Update attributes of an object
 - Destroy an object
 
+### Commands
+
+These are some of the commands implemented in our console (HBNBCommand):
+
+| Command | Description |
+| ------ | ------ |
+| all | Prints all string representation of all instances based or not on the class name |
+| create | Creates a new instance of class name, saves it (to the JSON file) and prints the id |
+| destroy | Deletes an instance based on the class name and id (save the change into the JSON file) |
+| help | List available commands with "help" or detailed help with "help cmd" |
+| quit | Quit command to exit the program |
+| show | Prints the string representation of an instance based on the class name and id |
+| update | Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file) |
+| EOF | EOF command to exit the program |
+
+## Files
+
+| File | Description |
+| ------ | ------ |
+| console.py | Contains the entry point of the command interpreter |
+| amenity.py | Amenity class that inherit from BaseModel |
+| base_model.py | BaseModel class that defines all common attributes/methods for other classes |
+| city.py | City class that inherit from BaseModel |
+| place.py | Place class that inherit from BaseModel |
+| review.py | Review class that inherit from BaseModel |
+| state.py | State class that inherit from BaseModel |
+| user.py | User class that inherit from BaseModel  |
+| file_storage.py | FileStorage class that serializes instances to a JSON file and deserializes JSON file to instances |
+| test_amenity.py | Unit Tests for the Amenity class |
+| test_base_model.py | Unit Tests for the BaseModel class |
+| test_city.py | Unit Tests for the City class |
+| test_place.py | Unit Tests for the Place class |
+| test_review.py | Unit Tests for the Review class |
+| test_state.py | Unit Tests for the State class |
+| test_user.py | Unit Tests for the User class |
+| test_file_storage.py | Unit Tests for the FileStorage class |
+| AUTHORS | Lists all individuals having contributed content to the repository |
+| README.md | README file with project description, installation, use and examples |
+
 ## Installation
 
 Clone this repository in your terminal:
@@ -123,6 +162,37 @@ JSON of my_model:
     updated_at: (<class 'str'>) - 2017-09-28T21:05:54.119572
     id: (<class 'str'>) - b6a6e15c-c67d-4312-9a75-9d084935e579
     created_at: (<class 'str'>) - 2017-09-28T21:05:54.119427
+```
+
+Another example using the "console.py" file:
+
+```
+$ ./console.py
+(hbnb) all MyModel
+** class doesn't exist **
+(hbnb) show BaseModel
+** instance id missing **
+(hbnb) show BaseModel Holberton
+** no instance found **
+(hbnb) create BaseModel
+49faff9a-6318-451f-87b6-910505c55907
+(hbnb) all BaseModel
+["[BaseModel] (49faff9a-6318-451f-87b6-910505c55907) {'created_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903293), 'id': '49faff9a-6318-451f-87b6-910505c55907', 'updated_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903300)}"]
+(hbnb) show BaseModel 49faff9a-6318-451f-87b6-910505c55907
+[BaseModel] (49faff9a-6318-451f-87b6-910505c55907) {'created_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903293), 'id': '49faff9a-6318-451f-87b6-910505c55907', 'updated_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903300)}
+(hbnb) destroy
+** class name missing **
+(hbnb) update BaseModel 49faff9a-6318-451f-87b6-910505c55907 first_name "Betty"
+(hbnb) show BaseModel 49faff9a-6318-451f-87b6-910505c55907
+[BaseModel] (49faff9a-6318-451f-87b6-910505c55907) {'first_name': 'Betty', 'id': '49faff9a-6318-451f-87b6-910505c55907', 'created_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903293), 'updated_at': datetime.datetime(2017, 10, 2, 3, 11, 3, 49401)}
+(hbnb) create BaseModel
+2dd6ef5c-467c-4f82-9521-a772ea7d84e9
+(hbnb) all BaseModel
+["[BaseModel] (2dd6ef5c-467c-4f82-9521-a772ea7d84e9) {'id': '2dd6ef5c-467c-4f82-9521-a772ea7d84e9', 'created_at': datetime.datetime(2017, 10, 2, 3, 11, 23, 639717), 'updated_at': datetime.datetime(2017, 10, 2, 3, 11, 23, 639724)}", "[BaseModel] (49faff9a-6318-451f-87b6-910505c55907) {'first_name': 'Betty', 'id': '49faff9a-6318-451f-87b6-910505c55907', 'created_at': datetime.datetime(2017, 10, 2, 3, 10, 25, 903293), 'updated_at': datetime.datetime(2017, 10, 2, 3, 11, 3, 49401)}"]
+(hbnb) destroy BaseModel 49faff9a-6318-451f-87b6-910505c55907
+(hbnb) show BaseModel 49faff9a-6318-451f-87b6-910505c55907
+** no instance found **
+(hbnb) 
 ```
 
 ## Authors
