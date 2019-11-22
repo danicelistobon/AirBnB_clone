@@ -1,6 +1,6 @@
 # :triangular_flag_on_post: 0x00. AirBnB clone - The console
 
-<img align="center" src="https://i.ibb.co/d5N85Nh/hbnb.png">
+<img align="center" src="https://i.ibb.co/d5N85Nh/hbnb.png" width="100%">
 
 ## Background Context
 
@@ -41,6 +41,8 @@ These are some of the commands implemented in our console (HBNBCommand):
 | update | Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file) |
 | EOF | EOF command to exit the program |
 
+<img align="center" src="https://i.ibb.co/L5wPt65/Consola.jpg" width="60%">
+
 ## Files
 
 | File | Description |
@@ -64,6 +66,8 @@ These are some of the commands implemented in our console (HBNBCommand):
 | test_file_storage.py | Unit Tests for the FileStorage class |
 | AUTHORS | Lists all individuals having contributed content to the repository |
 | README.md | README file with project description, installation, use and examples |
+
+<img align="center" src="https://i.ibb.co/g6XHQFf/Diagrama.jpg" width="100%">
 
 ## Installation
 
