@@ -11,5 +11,5 @@ header{
     width: inherit;
     left: 20px;
     top: 5px;
-    position: fixed;
+    position: relative;
 }
