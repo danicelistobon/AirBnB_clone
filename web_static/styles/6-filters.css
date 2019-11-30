@@ -22,7 +22,7 @@
 .buttonSch:hover{
     opacity: 90%;
 }
-filters .locations{
+.filters .locations{
     height: 100%;
     width: 25%;
     margin: 0;
@@ -30,7 +30,7 @@ filters .locations{
     float: left;
     position: relative;
 }
-filters .amenities{
+.filters .amenities{
     height: 100%;
     width: 25%;
     margin: 0;
@@ -78,9 +78,9 @@ h4{
     padding: 0;
     margin: 0;
 }
-filters .locations:hover .popover{
+.filters .locations:hover .popover{
     display: block;
 }
-filters .amenities:hover .popover{
+.filters .amenities:hover .popover{
     display: block;
 }
